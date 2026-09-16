@@ -1,0 +1,23 @@
+---
+- name: Configure Week 6 local server
+  hosts: local
+  become: true
+
+  tasks:
+    - name: Install Apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: true
+
+    - name: Create DevOps application user
+      ansible.builtin.user:
+        name: devopsapp
+        state: present
+        shell: /bin/bash
+
+    - name: Start and enable Apache2
+      ansible.builtin.service:
+        name: apache2
+        state: started
+        enabled: true
