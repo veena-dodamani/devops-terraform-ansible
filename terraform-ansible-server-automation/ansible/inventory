@@ -1,0 +1,2 @@
+[app_server]
+devops-app-server ansible_connection=community.docker.docker ansible_python_interpreter=/usr/local/bin/python3
