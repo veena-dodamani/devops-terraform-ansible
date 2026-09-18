@@ -1,35 +1,78 @@
-# Week 6 DevOps - Terraform & Ansible
+# DevOps Terraform & Ansible Server Automation
 
 ## Overview
 
-This project demonstrates Infrastructure as Code (IaC) using Terraform
-and configuration management using Ansible.
+Hands-on Infrastructure as Code (IaC) project demonstrating infrastructure provisioning with Terraform and automated server configuration with Ansible.
+
+## Technologies
+
+- Terraform
+- Ansible
+- Docker
+- Linux
+- Nginx
+- Git & GitHub
+- YAML
+- Bash
+
+## Project Workflow
+
+Terraform → Infrastructure → Ansible → Server Configuration → Application
 
 ## Terraform
 
-Terraform was used to:
+- Provisioned an application server using Docker
+- Used the Docker Terraform provider
+- Configured the application container and port mapping
+- Managed infrastructure using Infrastructure as Code
 
-- Configure the Local provider
-- Create a basic local file resource
-- Use variables and outputs
-- Practice Terraform state
-- Create and use a reusable Terraform module
-- Practice the Terraform workflow:
-  - terraform init
-  - terraform validate
-  - terraform plan
-  - terraform apply
-  - terraform destroy
+## Ansible
 
-## Terraform Structure
+- Connected to the provisioned application server
+- Installed Nginx and curl
+- Created an application user
+- Configured the application web page
+- Started/reloaded Nginx
+- Validated the Nginx configuration
+- Applied configuration changes through Ansible
 
-```text
-.
-├── main.tf
-├── variables.tf
-├── outputs.tf
-└── modules/
-    └── file/
-        ├── main.tf
-        ├── variables.tf
-        └── outputs.tf
+## Verification
+
+The application server was verified using:
+
+    curl http://localhost:8081
+
+The server successfully served the application page through Nginx.
+
+A configuration change was then made through Ansible and the playbook was executed again to verify repeatable configuration management.
+
+## Project Structure
+
+    terraform-ansible-server-automation/
+    ├── terraform/
+    │   ├── main.tf
+    │   └── .terraform.lock.hcl
+    │
+    └── ansible/
+        ├── inventory
+        └── playbook.yml
+
+## Key Learning
+
+- Infrastructure as Code with Terraform
+- Configuration management with Ansible
+- Docker-based infrastructure provisioning
+- Linux server configuration
+- Nginx deployment
+- Ansible inventory and playbooks
+- Infrastructure verification and troubleshooting
+- Repeatable server configuration
+
+## Author
+
+### Veena Shivappa Dodamani
+
+Aspiring DevOps & Cloud Engineer
+
+- LinkedIn: https://www.linkedin.com/in/veena-dodamani-b82265301/
+- GitHub: https://github.com/veena-dodamani
